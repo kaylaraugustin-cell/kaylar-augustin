@@ -42,8 +42,8 @@
             color: #666;
         }
 
-        /* Estilização do botão de interatividade */
-        .btn-curtir {
+        
+        .button-curtir {
             background-color: #fce8e6;
             color: #d93025;
             border: 2px solid #f28b82;
@@ -72,7 +72,8 @@
 <body>
     <header>
         <h1>Meu blog tech</h1>
-        <p>Vou compartilhar conhecimentos sobre Michael Jackson.</p>
+        <p>Vou compartilhar conhecimentos
+            sobre Michael Jackson.</p>
     </header>
 
     <main>
@@ -83,29 +84,23 @@
         <p class="artigo-autor">Por: Kaylar Augustin</p>
 
         <p>
-            Boas-vindas ao meu novo blog! Aqui vou falar sobre meu artista favorito,
-            Michael Jackson, que é afro-americano e o Rei do Pop.
+            Boas-vindas ao meu novo blog! 
+            Aqui vou falar sobre meu artista
+            favorito,Michael Jackson,que é
+            afro-americano e o Rei do Pop.
         </p>
 
-        <!-- Botão de interatividade com contador em tag span -->
+        
         <button class="btn-curtir">❤️ <span>0</span></button>
     </main>
 
     <script>
-        // Seleciona o botão no documento HTML
+
         const botao = document.querySelector(".btn-curtir");
-
-        // Adiciona o ouvinte de eventos para escutar o clique
         botao.addEventListener("click", botaoClicado);
-
-        // Função executada a cada clique no botão
         function botaoClicado() {
             console.log("fui clicado");
-            
-            // Seleciona a tag <span> dentro do botão
-            let texto = botao.querySelector("span");
-            
-            // Incrementa o número exibido
+            let texto = botao.querySelector("span")
             texto.textContent++;
         }
     </script>
