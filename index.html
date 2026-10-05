@@ -7,6 +7,13 @@
     <title>Meu blog Michael</title>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
         header {
             background-color: #6b46c1;
             color: #FFFFFF;
@@ -14,13 +21,50 @@
             text-align: center;
         }
 
+        main {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         img {
             width: 80px;
             height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .artigo-autor {
             font-weight: bold;
+            color: #666;
+        }
+
+        /* Estilização do botão de interatividade */
+        .btn-curtir {
+            background-color: #fce8e6;
+            color: #d93025;
+            border: 2px solid #f28b82;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s ease, background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .btn-curtir:hover {
+            background-color: #fad2cf;
+        }
+
+        .btn-curtir:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
@@ -42,6 +86,28 @@
             Boas-vindas ao meu novo blog! Aqui vou falar sobre meu artista favorito,
             Michael Jackson, que é afro-americano e o Rei do Pop.
         </p>
+
+        <!-- Botão de interatividade com contador em tag span -->
+        <button class="btn-curtir">❤️ <span>0</span></button>
     </main>
+
+    <script>
+        // Seleciona o botão no documento HTML
+        const botao = document.querySelector(".btn-curtir");
+
+        // Adiciona o ouvinte de eventos para escutar o clique
+        botao.addEventListener("click", botaoClicado);
+
+        // Função executada a cada clique no botão
+        function botaoClicado() {
+            console.log("fui clicado");
+            
+            // Seleciona a tag <span> dentro do botão
+            let texto = botao.querySelector("span");
+            
+            // Incrementa o número exibido
+            texto.textContent++;
+        }
+    </script>
 </body>
 </html>
